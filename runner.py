@@ -10,7 +10,7 @@ pygame.init()
 
 WIDTH, HEIGHT = 960, 720
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Tic-Tac-Toe // Minimax Lab")
+pygame.display.set_caption("Tic-Tac-Toe")
 clock = pygame.time.Clock()
 
 FONT_PATH = "OpenSans-Regular.ttf"
@@ -60,8 +60,6 @@ def draw_background():
 
 def draw_header():
     draw_text("TIC-TAC-TOE", font_small, CYAN, (48, 34))
-    draw_text("MINIMAX LAB", font_tiny, MUTED, (49, 61))
-    draw_text("ADVANCED DATA STRUCTURES", font_tiny, MUTED, (WIDTH - 245, 45))
 
 
 def draw_button(rect, label, accent, mouse_pos):
@@ -75,15 +73,7 @@ def draw_button(rect, label, accent, mouse_pos):
 
 def draw_start_screen(mouse_pos):
     draw_header()
-    draw_text("A perfect-information", font_hero, WHITE, (WIDTH // 2, 166), center=True)
-    draw_text("strategy challenge.", font_hero, CYAN, (WIDTH // 2, 228), center=True)
-    draw_text(
-        "Choose your mark. The computer searches the game tree for its best move.",
-        font_small,
-        MUTED,
-        (WIDTH // 2, 286),
-        center=True,
-    )
+    draw_text("Choose your side.", font_hero, WHITE, (WIDTH // 2, 200), center=True)
 
     card_width = 330
     card_height = 152
@@ -100,7 +90,7 @@ def draw_start_screen(mouse_pos):
         draw_text(mark, font_hero, accent, (rect.x + 34, rect.y + 25))
         draw_text(f"PLAY AS {mark}", font_body, WHITE, (rect.x + 118, rect.y + 38))
         draw_text(subtitle, font_small, MUTED, (rect.x + 118, rect.y + 82))
-    draw_text("Click a side to begin", font_tiny, MUTED, (WIDTH // 2, 570), center=True)
+    draw_text("Click to begin", font_tiny, MUTED, (WIDTH // 2, 570), center=True)
 
     return left, right
 
